@@ -1,7 +1,9 @@
 package problem.easy;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+// todo 다시 풀기
 public class Problem5 {
 
     /**
@@ -11,7 +13,7 @@ public class Problem5 {
      * @return 연결된 문자열
      */
     public static String concatenateStrings(List<String> strings) {
-        // 여기에 코드 작성
-        return "";
+        return strings.stream()
+                .collect(Collectors.joining());
     }
 }

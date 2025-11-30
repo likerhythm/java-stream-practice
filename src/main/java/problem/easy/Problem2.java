@@ -2,6 +2,7 @@ package problem.easy;
 
 import java.util.List;
 
+// todo 다시 풀기
 public class Problem2 {
 
     /**
@@ -11,7 +12,9 @@ public class Problem2 {
      * @return 각 요소를 제곱한 새 리스트
      */
     public static List<Integer> squareNumbers(List<Integer> numbers) {
-        // 여기에 코드 작성
-        return null;
+        return numbers.stream()
+                .mapToInt(n -> (int) (Math.pow(n, 2)))
+                .boxed()
+                .toList();
     }
 }
