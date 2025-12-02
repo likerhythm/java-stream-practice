@@ -1,7 +1,10 @@
 package problem.easy;
 
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
+// todo 다시 풀어 보기
 public class Problem12 {
 
     /**
@@ -11,7 +14,10 @@ public class Problem12 {
      * @return 문자열 길이를 값으로 가지는 새 Map
      */
     public static Map<String, Integer> mapStringLength(Map<String, String> map) {
-        // 여기에 코드 작성
-        return null;
+        return map.entrySet().stream()
+                .collect(Collectors.toMap(
+                        Entry::getKey,
+                        e -> e.getValue().length()
+                ));
     }
 }
