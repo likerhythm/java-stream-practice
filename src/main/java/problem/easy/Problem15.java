@@ -1,7 +1,9 @@
 package problem.easy;
 
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Problem15 {
 
@@ -12,7 +14,9 @@ public class Problem15 {
      * @return 'apple'을 값으로 가지는 모든 키의 Set
      */
     public static Set<String> keysForValue(Map<String, String> map, String value) {
-        // 여기에 코드 작성
-        return null;
+        return map.entrySet().stream()
+                .filter(e -> e.getValue().equals(value))
+                .map(Entry::getKey)
+                .collect(Collectors.toSet());
     }
 }
